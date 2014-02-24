@@ -1,32 +1,30 @@
-/*
-    So you like the style of impress.js demo?
-    Or maybe you are just curious how it was done?
+/* counter layout */
+#pbar_outerdiv {
+  width: 100%;
+  height: 5px;
+  z-index: 1;
+  position: relative;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+}
 
-    You couldn't find a better place to find out!
+#pbar_innerdiv{
+    background-color: red;
+    z-index: 2;
+    height: 100%;
+    width: 0%;
+}
 
-    Welcome to the stylesheet impress.js demo presentation.
-
-    Please remember that it is not meant to be a part of impress.js and is
-    not required by impress.js.
-    I expect that anyone creating a presentation for impress.js would create
-    their own set of styles.
-
-    But feel free to read through it and learn how to get the most of what
-    impress.js provides.
-
-    And let me be your guide.
-
-    Shall we begin?
-*/
-
-
-/*
-    We start with a good ol' reset.
-    That's the one by Eric Meyer http://meyerweb.com/eric/tools/css/reset/
-
-    You can probably argue if it is needed here, or not, but for sure it
-    doesn't do any harm and gives us a fresh start.
-*/
+#pbar_innertext{
+    z-index: 3;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -124,17 +122,7 @@ a:focus {
     text-shadow: -1px -1px 2px rgba(100,100,100,0.5);
 }
 
-/*
-    Because the main point behind the impress.js demo is to demo impress.js
-    we display a fallback message for users with browsers that don't support
-    all the features required by it.
 
-    All of the content will be still fully accessible for them, but I want
-    them to know that they are missing something - that's what the demo is
-    about, isn't it?
-
-    And then we hide the message, when support is detected in the browser.
-*/
 
 .fallback-message {
     font-family: sans-serif;
@@ -180,11 +168,7 @@ a:focus {
     line-height: 1.5;
 }
 
-/*
-    ... and we enhance the styles for impress.js.
 
-    Basically we remove the margin and make inactive steps a little bit transparent.
-*/
 .impress-enabled .step {
     margin: 0;
     opacity: 0.3;
@@ -198,14 +182,7 @@ a:focus {
 
 .impress-enabled .step.active { opacity: 1 }
 
-/*
-    These 'slide' step styles were heavily inspired by HTML5 Slides:
-    http://html5slides.googlecode.com/svn/trunk/styles.css
 
-    ;)
-
-    They cover everything what you see on first three steps of the demo.
-*/
 .slide {
     display: block;
 
@@ -213,10 +190,10 @@ a:focus {
     height: 700px;
     padding: 40px 60px;
 
-    background-color: white;
+    /*background-color: white;
     border: 1px solid rgba(0, 0, 0, .3);
     border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .1);*/
 
     color: rgb(102, 102, 102);
     text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
