@@ -91,7 +91,7 @@ Thanks alot to impress.js
         <img src="images/18.png" style="width:100%;opacity:3;"/>
     </div>
 
-    <div id="overview" class="step" data-x="-5000" data-y="1500" data-scale="10">
+    <div id="overview" class="step" data-x="-4500" data-y="1500" data-scale="11">
     </div>
 
 </div>
@@ -115,6 +115,8 @@ function updateProgress(promille) {
 var start = new Date();
 var maxTime = 20000;
 var timeoutVal = Math.floor(maxTime/1000);
+var stop = false;
+var started = false;
 
 function animateUpdate() {
     var now = new Date();
@@ -127,13 +129,23 @@ function animateUpdate() {
     else {
         //slide
         impress().next();
-        start = new Date();
-        setTimeout(animateUpdate, timeoutVal);
+        if(window.location.hash == "#/overview"){
+            impress().goto("overview");
+        }        
+        else{//yeah, it's ugly
+            start = new Date();
+            setTimeout(animateUpdate, timeoutVal);
+        }
     }
-
 }
 
-animateUpdate();
+$('body').bind('keyup click',function(e){
+   console.log(e);
+   if(e.keyCode == 83){
+    animateUpdate();
+   }
+});
+
 
 </script>
 
