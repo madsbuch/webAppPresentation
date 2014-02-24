@@ -290,7 +290,7 @@ function next(){
     window.setInterval(function(){
         impress().next();
         next()
-    }, 20000);
+    }, 5000);
 }
 next();
 </script>
